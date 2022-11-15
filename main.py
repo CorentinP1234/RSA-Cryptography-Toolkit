@@ -33,7 +33,7 @@ def isCoprime(first_value, second_value):
 def isCoprimeV2(first_value, second_value):
     g, x, y =gcdExtended(first_value, second_value)
     if (g == 1):
-        print(f"phi and e  are coprime")
+        print(f"phi and e are coprime")
         return True
     else:
         print(f"phi and e are not coprime")
@@ -53,7 +53,7 @@ def MenuCheckE():
     n_totient = Menu_totient()
     isCoprime(n_totient, e)
 
-def MenuFoundD():
+def MenuFindD():
     print("Give e:") 
     e = int(input())
     print("Give n:")
@@ -81,51 +81,51 @@ def Menu5():
     phi = totient(n)
     print()
 
-    print(f"(n, e) = ({n},{e})")
-    print(f"phi = {phi}")
-    print()
-
     if(isCoprimeV2(phi, e)):
-        print("d exists")
-        print()
-
         d = modinv(e, phi)
         print(f"d = {d}")
-        print(f"ans = (phi, d) = ({phi},{d}) (not private key)")
+        print(f"(phi, d) = ({phi},{d})")
     else: 
-        print("d doesn t exist")
+        print("d doesn t exists")
         print("impossible")
 
 def Menu6():
     print("Give n:")
     n = int(input())
-    print("Give d:")
-    d = int(input())
+
+    print("Do you have d ? [y/n]")
+    ans = input()
+    d = 0
+    if (ans == "y"):
+        print("Give d:")
+        d = int(input())
+    else:
+        print("Give e:")
+        e = int(input())
+        d = modinv(e, totient(n))
     phi = totient(n)
     print()
+
 
     print(f"(n, d) = ({n},{d})")
     print(f"phi = {phi}")
     print()
 
     if(isCoprimeV2(phi, d)):
-        print("d exists")
-        print()
-
         e = modinv(d, phi)
         print(f"e = {e}")
-        print(f"ans = (phi, e) = ({phi},{e})")
+        print(f"(phi, e) = ({phi},{e})")
     else: 
-        print("e doesn t exist")
+        print("e doesn t exists")
         print("impossible")
     
 def Encypher():
     print("Give m:")
     m = int(input())
-    print("Give e:")
-    e = int(input())
     print("Give n:")
     n = int(input())
+    print("Give e:")
+    e = int(input())
     cyphertext2 = mod_power(m, e, n)
     print(f"Cyphertext2 = {cyphertext2}")
 
@@ -256,7 +256,7 @@ elif (selection == "2"):
 elif (selection == "3"):
     MenuCheckE()
 elif (selection == "4"):
-    MenuFoundD()
+    MenuFindD()
 elif (selection == "5"):
     Menu5()
 elif (selection == "6"):
