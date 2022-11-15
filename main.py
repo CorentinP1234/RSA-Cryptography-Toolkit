@@ -122,10 +122,10 @@ def Menu6():
 def Encypher():
     print("Give the plaintext m:")
     m = int(input())
-    print("Give n of the receiver:")
+    print("Give n of the sender:")
     n = int(input())
 
-    print("Do you have e of the receiver? [y/n]")
+    print("Do you have e of the sender? [y/n]")
     ans = input()
     e = 0
     if (ans == "y"):
