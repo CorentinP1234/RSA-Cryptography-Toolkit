@@ -120,30 +120,41 @@ def Menu6():
         print("impossible")
     
 def Encypher():
-    print("Give m:")
+    print("Give the plaintext m:")
     m = int(input())
-    print("Give n:")
+    print("Give n of the receiver:")
     n = int(input())
-    print("Give e:")
-    e = int(input())
-    cyphertext2 = mod_power(m, e, n)
-    print(f"Cyphertext2 = {cyphertext2}")
+
+    print("Do you have e of the receiver? [y/n]")
+    ans = input()
+    e = 0
+    if (ans == "y"):
+        print("Give e:")
+        e = int(input())
+    else:
+        print("Give d:")
+        d = int(input())
+        e = modinv(d, totient(n))
+    print()
+
+    cyphertext = mod_power(m, e, n)
+    print(f"Cyphertext = {cyphertext}")
 
 def Decypher():
-    print("Give c:")
+    print("Give the cyphertext c:")
     c = int(input())
 
-    print("Give n:")
+    print("Give n of the receiver:")
     n = int(input())
 
-    print("Do you have d ? [y/n]")
+    print("Do you have d of the receiver? [y/n]")
     ans = input()
     d = 0
     if (ans == "y"):
-        print("Give d:")
+        print("Give d of the receiver:")
         d = int(input())
     else:
-        print("Give e:")
+        print("Give e of the receiver:")
         e = int(input())
         d = modinv(e, totient(n))
     
