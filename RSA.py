@@ -1,4 +1,6 @@
 from sympy.ntheory import totient
+
+
 class RSA:
     """Class for RSA operations."""
 
@@ -61,10 +63,25 @@ class RSA:
         plaintext = pow(c, self.d, self.n)
         return plaintext
 
+    def build_signature(self, m, n, d):
+        """Build a signature."""
+        self.n = n
+        self.d = d
+        signature = pow(m, self.d, self.n)
+        return signature
+
+    def check_signature(self, s, n, e):
+        """Check a signature."""
+        self.n = n
+        self.e = e
+        original = pow(s, self.e, self.n)
+        return original
+
+
 def main():
     """Main function to handle user interface."""
     rsa = RSA()
-    print("Choose a number between 1 and 8:")
+    print("Choose a number between 1 and 10:")
     print("1. Check if two numbers are coprime")
     print("2. Compute phi(n)")
     print("3. Validate e given phi(n)")
@@ -73,23 +90,30 @@ def main():
     print("6. Compute (phi, e) given n and d")
     print("7. Encrypt")
     print("8. Decrypt")
+    print("9. Build signature")
+    print("10. Check signature")
     selection = input()
-    if selection == '1':
+    if selection == "1":
         rsa.check_coprime_ui()
-    elif selection == '2':
+    elif selection == "2":
         rsa.compute_totient_ui()
-    elif selection == '3':
+    elif selection == "3":
         rsa.validate_e_ui()
-    elif selection == '4':
+    elif selection == "4":
         rsa.find_d()
-    elif selection == '5':
+    elif selection == "5":
         rsa.compute_phi_d()
-    elif selection == '6':
+    elif selection == "6":
         rsa.compute_phi_e()
-    elif selection == '7':
+    elif selection == "7":
         rsa.encrypt()
-    elif selection == '8':
+    elif selection == "8":
         rsa.decrypt()
+    elif selection == "9":
+        rsa.build_signature_ui()
+    elif selection == "10":
+        rsa.check_signature_ui()
+
 
 if __name__ == "__main__":
     main()
