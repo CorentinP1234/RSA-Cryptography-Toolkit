@@ -37,6 +37,8 @@ Choose a number between 1 and 8:
 6. Compute (phi, e) given n and d
 7. Encrypt
 8. Decrypt
+9. Build signature
+10. Check signature
 ```
 
 
@@ -48,6 +50,8 @@ Choose a number between 1 and 8:
 - If you choose '6', you will be asked to enter the numbers n and d, and the module will compute both phi(n) and e.
 - If you choose '7', you will be asked to enter the numbers m (message), n, and e, and the module will return the encrypted message.
 - If you choose '8', you will be asked to enter the numbers c (cyphertext), n, and d, and the module will return the decrypted message.
+- If you choose '9', you will be asked to enter the numbers m (message), n, and d, and the module will return the RSA signature for the message.
+- If you choose '10', you will be asked to enter the numbers s (signature), n, and e, and the module will check and return the original message if the signature is valid.
 
 ## Disclaimer
 This module is a simple implementation of the RSA algorithm and should not be used for any kind of secure communication as it does not include any security measures or optimizations typically found in professional-grade cryptographic software.
