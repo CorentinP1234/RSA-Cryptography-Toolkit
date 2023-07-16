@@ -1,7 +1,7 @@
-# RSA Python Module
+# RSA Toolkit Python Module
 
 ## Description
-This Python module includes an implementation of the RSA (Rivest-Shamir-Adleman) algorithm. The RSA algorithm is a widely used public key cryptosystem that allows for secure data transmission.
+This Python module includes an implementation of the RSA (Rivest-Shamir-Adleman) algorithm. The RSA algorithm is a widely used public key cryptosystem that allows for secure data transmission. The module provides various functionalities related to RSA encryption, decryption, key generation, and signature operations.
 
 ## Features
 - Implements RSA (Rivest-Shamir-Adleman) encryption and decryption
@@ -9,6 +9,8 @@ This Python module includes an implementation of the RSA (Rivest-Shamir-Adleman)
 - Computes Euler's Totient function (phi)
 - Validates if e and phi are coprime
 - Computes the modular inverse (private key)
+- Generate RSA key pairs (public and private keys)
+- Build and verify RSA signatures
 - User-friendly interface to run different functions
 
 ## Dependencies
@@ -60,4 +62,4 @@ This module is a simple implementation of the RSA algorithm and should not be us
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contact
-For any questions, feel free to contact us.
+For any questions, feel free to contact me corentin.prad@gmail.com.
